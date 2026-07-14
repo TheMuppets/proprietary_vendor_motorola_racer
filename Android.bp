@@ -3707,70 +3707,6 @@ cc_prebuilt_library_shared {
     soc_specific: true,
 }
 
-cc_prebuilt_library_shared {
-    name: "libmcf_native_window_helper.motocamera",
-    owner: "motorola",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/system_ext/lib/libmcf_native_window_helper.motocamera.so",
-            ],
-            shared_libs: [
-                "libandroid",
-                "liblog",
-                "libnativewindow",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-        android_arm64: {
-            srcs: [
-                "proprietary/system_ext/lib64/libmcf_native_window_helper.motocamera.so",
-            ],
-            shared_libs: [
-                "libandroid",
-                "liblog",
-                "libnativewindow",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "both",
-    prefer: true,
-    system_ext_specific: true,
-}
-
-android_app_import {
-    name: "MotoSignatureApp",
-    owner: "motorola",
-    apk: "proprietary/system/app/MotoSignatureApp/MotoSignatureApp.apk",
-    preprocessed: true,
-    presigned: true,
-    dex_preopt: {
-        enabled: false,
-    },
-}
-
-android_app_import {
-    name: "MotCamera2AI",
-    owner: "motorola",
-    apk: "proprietary/product/app/MotCamera2AI/MotCamera2AI.apk",
-    preprocessed: true,
-    presigned: true,
-    dex_preopt: {
-        enabled: false,
-    },
-    product_specific: true,
-}
-
 android_app_import {
     name: "HotwordEnrollmentOKGoogleWM8280",
     owner: "motorola",
@@ -3792,63 +3728,6 @@ android_app_import {
         enabled: false,
     },
     privileged: true,
-    product_specific: true,
-}
-
-android_app_import {
-    name: "MotCamera2",
-    owner: "motorola",
-    apk: "proprietary/product/priv-app/MotCamera2/MotCamera2.apk",
-    certificate: "platform",
-    dex_preopt: {
-        enabled: false,
-    },
-    privileged: true,
-    product_specific: true,
-}
-
-android_app_import {
-    name: "MotorolaSettingsProvider",
-    owner: "motorola",
-    apk: "proprietary/system_ext/priv-app/MotorolaSettingsProvider/MotorolaSettingsProvider.apk",
-    certificate: "platform",
-    dex_preopt: {
-        enabled: false,
-    },
-    privileged: true,
-    system_ext_specific: true,
-}
-
-dex_import {
-    name: "com.motorola.motosignature",
-    owner: "motorola",
-    jars: [
-        "proprietary/system/framework/com.motorola.motosignature.jar",
-    ],
-}
-
-dex_import {
-    name: "moto-core_services",
-    owner: "motorola",
-    jars: [
-        "proprietary/system/framework/moto-core_services.jar",
-    ],
-}
-
-dex_import {
-    name: "moto-settings",
-    owner: "motorola",
-    jars: [
-        "proprietary/system/framework/moto-settings.jar",
-    ],
-}
-
-dex_import {
-    name: "com.motorola.androidx.camera.extensions",
-    owner: "motorola",
-    jars: [
-        "proprietary/product/framework/com.motorola.androidx.camera.extensions.jar",
-    ],
     product_specific: true,
 }
 
