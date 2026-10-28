@@ -123,10 +123,14 @@ PRODUCT_COPY_FILES += \
     vendor/motorola/racer/proprietary/vendor/lib64/camera/fdconfigvideolite.bin:$(TARGET_COPY_OUT_VENDOR)/lib64/camera/fdconfigvideolite.bin
 
 PRODUCT_PACKAGES += \
+    libadspd \
     libtinyalsa-moto \
     motorola.hardware.audio.adspd@1.0-impl \
     motorola.hardware.audio.adspd@1.0 \
+    audio.motvr.default \
     sound_trigger.primary.default \
+    libmotaudioutils \
+    libunshorten \
     motorola.hardware.audio.adspd@1.0_vendor \
     com.mot.eeprom.mot_dw9763_ov8856_eeprom \
     com.mot.eeprom.mot_dw9767_ov16a10_eeprom \
@@ -193,7 +197,6 @@ PRODUCT_PACKAGES += \
     camera.qcom \
     com.qti.chi.override \
     fingerprint.goodix \
-    libadspd \
     libarcsoft_portrait_distortion_correction \
     libbitmlengine \
     libcamera_nn_stub \

@@ -12,6 +12,53 @@ soong_namespace {
 }
 
 cc_prebuilt_library_shared {
+    name: "libadspd",
+    owner: "motorola",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libadspd.so",
+            ],
+            shared_libs: [
+                "libbase",
+                "libhidlbase",
+                "motorola.hardware.audio.adspd@1.0",
+                "libcutils",
+                "liblog",
+                "libutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libadspd.so",
+            ],
+            shared_libs: [
+                "libbase",
+                "libhidlbase",
+                "motorola.hardware.audio.adspd@1.0",
+                "libcutils",
+                "liblog",
+                "libutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "libtinyalsa-moto",
     owner: "motorola",
     strip: {
@@ -145,6 +192,40 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "audio.motvr.default",
+    owner: "motorola",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/hw/audio.motvr.default.so",
+            ],
+            shared_libs: [
+                "libtinycompress",
+                "libexpat",
+                "liblog",
+                "libcutils",
+                "libhardware",
+                "libtinyalsa-moto",
+                "libutils",
+                "libadspd",
+                "libmotaudioutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    relative_install_path: "hw",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "sound_trigger.primary.default",
     owner: "motorola",
     strip: {
@@ -175,6 +256,58 @@ cc_prebuilt_library_shared {
     },
     compile_multilib: "32",
     relative_install_path: "hw",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmotaudioutils",
+    owner: "motorola",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libmotaudioutils.so",
+            ],
+            shared_libs: [
+                "libunshorten",
+                "liblog",
+                "libutils",
+                "libgui_vendor",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libunshorten",
+    owner: "motorola",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libunshorten.so",
+            ],
+            shared_libs: [
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "32",
     prefer: true,
     soc_specific: true,
 }
@@ -2343,36 +2476,6 @@ cc_prebuilt_library_shared {
     },
     compile_multilib: "64",
     relative_install_path: "hw",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libadspd",
-    owner: "motorola",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libadspd.so",
-            ],
-            shared_libs: [
-                "libbase",
-                "libhidlbase",
-                "motorola.hardware.audio.adspd@1.0",
-                "libcutils",
-                "liblog",
-                "libutils",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
     prefer: true,
     soc_specific: true,
 }
