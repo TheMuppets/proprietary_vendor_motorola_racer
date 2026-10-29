@@ -39,6 +39,7 @@ PRODUCT_COPY_FILES += \
     vendor/motorola/racer/proprietary/vendor/etc/camera/vidhance_calibration:$(TARGET_COPY_OUT_VENDOR)/etc/camera/vidhance_calibration \
     vendor/motorola/racer/proprietary/vendor/etc/charger_fstab.qti:$(TARGET_COPY_OUT_VENDOR)/etc/charger_fstab.qti \
     vendor/motorola/racer/proprietary/vendor/etc/hdr_tm_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/hdr_tm_config.xml \
+    vendor/motorola/racer/proprietary/vendor/etc/init/motorola.hardware.audio.adspd@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/motorola.hardware.audio.adspd@1.0-service.rc \
     vendor/motorola/racer/proprietary/vendor/etc/init/vendor.qti.hardware.charger_monitor@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.qti.hardware.charger_monitor@1.0-service.rc \
     vendor/motorola/racer/proprietary/vendor/etc/libnfc-hal-st.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-hal-st.conf \
     vendor/motorola/racer/proprietary/vendor/etc/libnfc-nci.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nci.conf \
@@ -122,6 +123,11 @@ PRODUCT_COPY_FILES += \
     vendor/motorola/racer/proprietary/vendor/lib64/camera/fdconfigvideolite.bin:$(TARGET_COPY_OUT_VENDOR)/lib64/camera/fdconfigvideolite.bin
 
 PRODUCT_PACKAGES += \
+    libtinyalsa-moto \
+    motorola.hardware.audio.adspd@1.0-impl \
+    motorola.hardware.audio.adspd@1.0 \
+    sound_trigger.primary.default \
+    motorola.hardware.audio.adspd@1.0_vendor \
     com.mot.eeprom.mot_dw9763_ov8856_eeprom \
     com.mot.eeprom.mot_dw9767_ov16a10_eeprom \
     com.mot.eeprom.mot_gt9767_s5kgw1_eeprom \
@@ -187,6 +193,7 @@ PRODUCT_PACKAGES += \
     camera.qcom \
     com.qti.chi.override \
     fingerprint.goodix \
+    libadspd \
     libarcsoft_portrait_distortion_correction \
     libbitmlengine \
     libcamera_nn_stub \
@@ -243,5 +250,6 @@ PRODUCT_PACKAGES += \
     com.android.hotwordenrollment.common.util \
     capsense_reset \
     hvdcp_opti \
+    motorola.hardware.audio.adspd@1.0-service \
     motpsd \
     vl53l1_daemon
